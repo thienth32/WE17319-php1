@@ -1,0 +1,4 @@
+1|Iphone 13|20000
+2|Samsung S22 ultra|25000
+3|oppo fine 5|15000
+4|Galaxy S4|7000

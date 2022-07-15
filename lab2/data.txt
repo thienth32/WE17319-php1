@@ -1,0 +1,4 @@
+ph0001|Nguyễn Văn A|2004|1|WE17319
+ph0002|Nguyễn Văn B|2003|2|WE17319
+ph0003|Nguyễn Văn C|2003|1|WE17318
+ph0004|Nguyễn Văn E|2002|1|WE17313

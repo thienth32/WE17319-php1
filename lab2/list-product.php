@@ -22,6 +22,7 @@ $products = getAll();
                 <td><?= $item[1] ?></td>
                 <td><?= $item[2] ?></td>
                 <td>
+                    <a href="edit-product.php?id=<?= $item[0] ?>">Sửa</a>
                     <a href="remove-product.php?id=<?= $item[0] ?>">xóa</a>
                 </td>
             </tr>

@@ -13,6 +13,32 @@ $stmt->execute();
 // 4. Nhận dữ liệu trả về từ câu sql
 $data = $stmt->fetchAll(); // lấy về tất cả các bản ghi tìm được từ câu sql
 // $data = $stmt->fetch(); - lấy ra 1 bản ghi đầu tiên tìm đc từ câu sql
-
-echo "<pre>";
-var_dump($data);
+?>
+<table border="1">
+    <thead>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Avatar</th>
+        <th>
+            <a href="add-form.php">Add</a>
+        </th>
+    </thead>
+    <tbody>
+        <?php foreach($data as $u): ?>
+            <tr>
+                <td>
+                    <?= $u['name']?>
+                </td>
+                <td>
+                    <?= $u['email']?>
+                </td>
+                <td>
+                    <?= $u['avatar']?>
+                </td>
+                <td>
+                    <a href="remove.php?id=<?= $u['id']?>">Xóa</a>
+                </td>
+            </tr>
+        <?php endforeach?>
+    </tbody>
+</table>

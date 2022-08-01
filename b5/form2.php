@@ -7,9 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="submit.php?age=41" method="post">
+    <form action="upload-file.php" method="post" 
+        enctype="multipart/form-data">
+        <label for="">Họ và tên</label>
         <input type="text" name="name">
-        <button type="submit">Submit</button>
+        <br>
+        Ảnh: <input type="file" name="avatar">
+        <br>
+        <button type="submit">Upload</button>
     </form>
 </body>
 </html>

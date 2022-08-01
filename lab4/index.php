@@ -36,7 +36,8 @@ $data = $stmt->fetchAll(); // lấy về tất cả các bản ghi tìm được
                     <?= $u['avatar']?>
                 </td>
                 <td>
-                    <a href="remove.php?id=<?= $u['id']?>">Xóa</a>
+                    <a href="edit.php?id=<?= $u['id']?>">Edit</a>
+                    <a href="remove.php?id=<?= $u['id']?>">Remove</a>
                 </td>
             </tr>
         <?php endforeach?>

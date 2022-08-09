@@ -10,9 +10,15 @@
     <form action="post-login.php" method="post">
         <div>
             email: <input type="text" name="email">
+            <?php if(isset($_GET['emailerr'])):?>
+                <span style="color: red"><?= $_GET['emailerr']?></span>
+            <?php endif ?>
         </div>
         <div>
             password: <input type="password" name="password">
+            <?php if(isset($_GET['passworderr'])):?>
+                <span style="color: red"><?= $_GET['passworderr']?></span>
+            <?php endif ?>
         </div>
         <button type="submit">Đăng nhập</button>
     </form>

@@ -22,4 +22,6 @@ $data = $stmt->fetchAll();
 
 ?>
 Hiện có <?= count($data) ?> tài khoản trong db
-<a href="logout.php">Thoát</a>
+<br>
+
+Xin chào, <?= $_SESSION['auth']['name']?>. <a href="logout.php">Thoát</a>

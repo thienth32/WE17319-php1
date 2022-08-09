@@ -4,6 +4,22 @@ require_once '../../lib/connect/db.php';
 // nhận dữ liệu từ form
 $email = $_POST['email'];
 $password = $_POST['password'];
+$emailerr = "";
+$passworderr = "";
+// kiểm tra email gửi lên
+// nếu bị rỗng thì báo lỗi
+if(strlen($email) == 0){
+    $emailerr = "Hãy nhập email";
+}
+
+if(strlen($password) == 0){
+    $passworderr = "Hãy nhập mật khẩu";
+}
+
+if(!empty($emailerr) || !empty($passworderr)){
+    header("location: login.php?emailerr=$emailerr&passworderr=$passworderr");
+    die;
+}
 // dựa vào email tìm kiếm trong csdl lấy ra bản ghi đầu tiên tìm được
 $sqlQuery = "select * from users where email = '$email'";
 $stmt = $connect->prepare($sqlQuery);

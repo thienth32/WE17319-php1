@@ -1,4 +1,9 @@
 <?php
+session_start();
+if(!isset($_SESSION['auth']) || empty($_SESSION['auth'])){
+    header('location: login.php');
+    die;
+}
 // 1. Tạo câu sql để lấy dữ liệu từ db
 $sqlQuery = "select * from users";
 // 2. tạo kết nối từ php => mysql

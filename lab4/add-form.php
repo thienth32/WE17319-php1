@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!isset($_SESSION['auth']) || empty($_SESSION['auth'])){
+    header('location: login.php');
+    die;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

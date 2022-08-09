@@ -5,8 +5,7 @@ if(!isset($_SESSION['auth']) || empty($_SESSION['auth'])){
     die;
 }
 // tạo kết nối & thực thi câu lệnh với db
-$connect = new PDO("mysql:host=127.0.0.1;dbname=php1;charset=utf8", 
-    "root", "12345678");
+require_once '../../lib/connect/db.php';
 // nhận dữ liệu từ form
 $name = $_POST['name'];
 $email = $_POST['email'];
@@ -27,9 +26,7 @@ if(strlen($email) == 0){
                                 count(*) as total 
                         from users 
                         where email = '$email'";
-    $stmt = $connect->prepare($sqlCheckEmail);
-    $stmt->execute();
-    $countData = $stmt->fetch();
+    $countData = executeQuery($sqlCheckEmail, false);
     if($countData['total'] > 0){
         $emailerr = "Email đã tồn tại, vui lòng chọn email khác";
     }
@@ -52,8 +49,6 @@ $insertQuery = "insert into users
 
 
 //3.1 Nạp câu sql vào kết nối
-$stmt = $connect->prepare($insertQuery);
-// 3.2 Thực thi câu sql với db
-$stmt->execute();
+executeQuery($insertQuery, false);
 header('location: index.php');
 ?>

@@ -2,11 +2,7 @@
 session_start();
 require_once '../../lib/connect/db.php';
 $sqlGetProducts = "select * from products";
-$stmt = $connect->prepare($sqlGetProducts);
-$stmt->execute();
-$products = $stmt->fetchAll();
-
-
+$products = executeQuery($sqlGetProducts, true);
 
 ?>
 
